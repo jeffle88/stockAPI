@@ -1,4 +1,4 @@
-This is a stock API running on Express JS
+##This is a stock API running on Express JS##
 
 Please install the following packages before using:
 
@@ -15,6 +15,7 @@ Please install the following packages before using:
 6) nodemon server.js
 
 *Go to your internet browser*
+
 7) type: http://localhost:8000/
 
 Enter stock symbols in the search bar. 
