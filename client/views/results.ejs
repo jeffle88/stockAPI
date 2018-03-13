@@ -12,8 +12,8 @@
 </head>
 <body>
     <div id="background">
-        <button class="btn btn-primary" ><a href="/back">Back</a></button>
         <br>
+        <button class="btn btn-primary" ><a href="/back">Back</a></button>
         <br>
         <% for(var d in bigdata) { %>
             <div id="item">
@@ -42,6 +42,9 @@
         margin: 0px auto;
         text-align: center;
     }
+    #background a{
+        color:white;
+    }
     #stock{
         display: inline-block;
         text-align: center;
@@ -57,7 +60,8 @@
         content:'$';
         font-family: 'Slabo 27px', serif;
     }
-    .header{
+    #header{
         font-family: 'Slabo 27px', serif;
+        color:#337ab7;
     }
 </style>
