@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <title>Stock API</title>
+</head>
+<body>
+    <div id="background">
+        <button class="btn btn-primary" ><a href="/back">Back</a></button>
+        <br>
+        <br>
+        <% for(var d in bigdata) { %>
+            <div id="item">
+                <h2 id="header"><%= bigdata[d].arr2['2. Symbol'] %> Stock</h2>
+                <% for(var i in bigdata[d].arr) { %>
+                <div id="stock">
+                    <h3> <%= bigdata[d].arr3[i] %></h3>
+                    <ul id="prices">
+                        <li>Open: <span class="dollars"><%= bigdata[d].arr[i]['1. open'] %></span></li>
+                        <li>High: <span class="dollars"><%= bigdata[d].arr[i]['2. high'] %></span></li>
+                        <li>Low: <span class="dollars"><%= bigdata[d].arr[i]['3. low'] %></span></li>
+                        <li>Close: <span class="dollars"><%= bigdata[d].arr[i]['4. close'] %></span></li>
+                        <li>Volumne: <%= bigdata[d].arr[i]['5. volume'] %></li>
+                    </ul>
+                </div>
+                <% } %>
+            </div>   
+        <% } %>
+    </div>
+</body>
+</html>
+
+
+<style>
+    #background{
+        margin: 0px auto;
+        text-align: center;
+    }
+    #stock{
+        display: inline-block;
+        text-align: center;
+    }
+    ul#prices{
+        list-style-type: none;
+        font-size: 120%;
+    }
+    #item{
+        background-color: lightgray;
+    }
+    .dollars:before { 
+        content:'$';
+        font-family: 'Slabo 27px', serif;
+    }
+    .header{
+        font-family: 'Slabo 27px', serif;
+    }
+</style>

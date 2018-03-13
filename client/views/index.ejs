@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Kaushan+Script" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Stock API</title>
+</head>
+<body>
+    <div id="background">
+        <div class="top-container">
+            <h1 class="header">Stockpedia</h1>
+            <br>
+            <form action="/search" method="get">
+                <input type="text" name="sym" placeholder="Enter symbol here...">
+                <input type="submit" class="btn btn-primary" value="Search">
+            </form>
+            <br>
+            <p>* Please put stock symbols in the following format "FB, MSFT, NFLX" </p>
+        </div>       
+    </div>
+</body>
+</html>
+
+
+<style>
+        #background{
+            margin: 0px auto;
+            text-align: center;
+        }
+        #top-container{
+            background-color: darkgray;
+            color: white;
+        }
+        #top-container H1{
+            color: white;
+        }
+        .header{
+            font-family: 'Kaushan Script', cursive;
+            font-size: 400%;
+        }
+        input[type=text] {
+            width: 230px;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            background-color: white;
+            background-image: url('searchicon.png');
+            background-position: 10px 10px; 
+            background-repeat: no-repeat;
+            padding: 12px 20px 12px 40px;
+            -webkit-transition: width 0.4s ease-in-out;
+            transition: width 0.4s ease-in-out;
+        }
+
+        input[type=text]:focus {
+            width: 50%;
+        }
+    </style>
