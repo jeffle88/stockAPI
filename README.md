@@ -1,4 +1,4 @@
-##This is a stock API running on Express JS##
+**This is a stock API running on Express JS**
 
 Please install the following packages before using:
 
