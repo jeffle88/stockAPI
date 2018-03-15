@@ -1,11 +1,55 @@
 #background{
-    background-color:#424242;
     margin: 0px auto;
-    width: 1020px;
-    height: 960px;
+    text-align: center;
 }
 #top-container{
-    background-color: #009ec2;
+    background-color: darkgray;
     color: white;
-    
+}
+#top-container H1{
+    color: white;
+}
+.header{
+    font-family: 'Kaushan Script', cursive;
+    font-size: 400%;
+}
+input[type=text] {
+    width: 230px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+input[type=text]:focus {
+    width: 50%;
+}
+#stock{
+    display: inline-block;
+    text-align: center;
+}
+ul#prices{
+    list-style-type: none;
+    font-size: 120%;
+}
+#item{
+    background-color: lightgray;
+}
+.dollars:before { 
+    content:'$';
+    font-family: 'Slabo 27px', serif;
+}
+#header{
+    font-family: 'Slabo 27px', serif;
+    color:#337ab7;
+}
+#back{
+    color: white;
 }

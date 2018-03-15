@@ -8,12 +8,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Slabo+27px" rel="stylesheet">
+    <link rel="stylesheet" href="main.css">
     <title>Stock API</title>
 </head>
 <body>
     <div id="background">
         <br>
-        <button class="btn btn-primary" ><a href="/back">Back</a></button>
+        <button class="btn btn-primary" ><a id="back" href="/">Back</a></button>
         <br>
         <% for(var d in bigdata) { %>
             <div id="item">
@@ -35,33 +36,3 @@
     </div>
 </body>
 </html>
-
-
-<style>
-    #background{
-        margin: 0px auto;
-        text-align: center;
-    }
-    #background a{
-        color:white;
-    }
-    #stock{
-        display: inline-block;
-        text-align: center;
-    }
-    ul#prices{
-        list-style-type: none;
-        font-size: 120%;
-    }
-    #item{
-        background-color: lightgray;
-    }
-    .dollars:before { 
-        content:'$';
-        font-family: 'Slabo 27px', serif;
-    }
-    #header{
-        font-family: 'Slabo 27px', serif;
-        color:#337ab7;
-    }
-</style>

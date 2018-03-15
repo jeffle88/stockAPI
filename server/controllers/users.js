@@ -4,27 +4,34 @@ module.exports = {
     search: function(req, res){
     const axios = require('axios');
     var symb = req.query.sym;
-        function find(str){     //Putting symbols into an array to search later
-            var array = [];
-            var count = 0;
-            for(var i = 0; i < str.length; i++){
-                if(str[i] === " "){
-                    count++;
-                    continue;
-                }
-                if(str[i] === ","){
-                    stx = str.slice(count, i);
-                    array.push(stx);
-                    count = i;
-                    count ++;
-                }
-                if(i === str.length -1){
-                    stx = str.slice(count, i+1);
-                    array.push(stx);
-                } 
+    function rotate(str){       //fixing the order of the dates so it's MM/DD/YYYY
+        var newstr = "";
+        str1 = str.slice(0, 4);
+        str2 = str.slice(5, 10)
+        newstr = str2 + "-" + str1;
+    return newstr;
+    }
+    function find(str){     //Putting symbols into an array to search later
+        var array = [];
+        var count = 0;
+        for(var i = 0; i < str.length; i++){
+            if(str[i] === " "){
+                count++;
+                continue;
             }
-            return array;
+            if(str[i] === ","){
+                stx = str.slice(count, i);
+                array.push(stx);
+                count = i;
+                count ++;
+            }
+            if(i === str.length -1){
+                stx = str.slice(count, i+1);
+                array.push(stx);
+            } 
         }
+        return array;
+    }
     var stocks = find(symb);
     var bigdata = [];
     for(var k = 0; k < stocks.length; k++){
@@ -42,13 +49,6 @@ module.exports = {
                     break;
                 }
                 else{
-                    function rotate(str){       //fixing the order of the dates so it's MM/DD/YYYY
-                        var newstr = "";
-                        str1 = str.slice(0, 4);
-                        str2 = str.slice(5, 10)
-                        newstr = str2 + "-" + str1;
-                        return newstr;
-                    }
                     arr3.push(rotate(idx));
                     arr.push(ts[idx]);
                 }

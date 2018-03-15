@@ -7,9 +7,6 @@ module.exports = function(app){
     }),
     app.get('/search', function(req, res){
         users.search(req, res);
-    }),
-    app.get('/back', function(req, res){
-        console.log("hit")
-        return res.render('index');
     });
+
 }
