@@ -1,7 +1,7 @@
 
 module.exports = {
 
-    search: function(req, res){
+    search: async function(req, res){
     const axios = require('axios');
     var symb = req.query.sym;
     function rotate(str){       //fixing the order of the dates so it's MM/DD/YYYY
@@ -37,7 +37,7 @@ module.exports = {
     for(var k = 0; k < stocks.length; k++){
         var find = stocks[k];
         //API request
-        axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + find + '&apikey=2CFXI8UYE49A0QSW&datatype=json')
+        await axios.get('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + find + '&apikey=2CFXI8UYE49A0QSW&datatype=json')
         .then(response => {
             var arr = [];                               //array for prices-data
             var arr2 = response.data['Meta Data'];      //information about the stock
@@ -60,6 +60,6 @@ module.exports = {
             console.log(error);
         });   
     }
-    setTimeout(function(){ res.render("results", {bigdata: bigdata}); }, 5000); //Pushing all of the data to the front page
+    res.render("results", {bigdata: bigdata});  //Pushing all of the data to the front page
     },
 }
