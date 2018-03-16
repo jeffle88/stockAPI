@@ -1,8 +1,8 @@
+const axios = require('axios');
 
 module.exports = {
 
     search: async function(req, res){
-    const axios = require('axios');
     var symb = req.query.sym;
     function rotate(str){       //fixing the order of the dates so it's MM/DD/YYYY
         var newstr = "";
