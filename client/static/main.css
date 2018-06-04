@@ -53,3 +53,14 @@ ul#prices{
 #back{
     color: white;
 }
+#priceLeftAlign{
+    text-align: left; 
+    width: 100px; 
+    display: inline-block;
+}
+#priceRightAlign{
+    text-align: right; 
+    width: 80px; 
+    display: inline-block;
+}
+

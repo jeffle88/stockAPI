@@ -16,18 +16,20 @@
         <br>
         <button class="btn btn-primary" ><a id="back" href="/">Back</a></button>
         <br>
+        <br>
+        <p>Last 5 Day prices</p>
         <% for(var d in bigdata) { %>
             <div id="item">
                 <h2 id="header"><%= bigdata[d].arr2['2. Symbol'] %> Stock</h2>
                 <% for(var i in bigdata[d].arr) { %>
                 <div id="stock">
                     <h3> <%= bigdata[d].arr3[i] %></h3>
-                    <ul id="prices">
-                        <li>Open: <span class="dollars"><%= bigdata[d].arr[i]['1. open'] %></span></li>
-                        <li>High: <span class="dollars"><%= bigdata[d].arr[i]['2. high'] %></span></li>
-                        <li>Low: <span class="dollars"><%= bigdata[d].arr[i]['3. low'] %></span></li>
-                        <li>Close: <span class="dollars"><%= bigdata[d].arr[i]['4. close'] %></span></li>
-                        <li>Volume: <%= bigdata[d].arr[i]['5. volume'] %></li>
+                    <ul id="prices" style="width: 240px;">
+                        <li><div id="priceLeftAlign">Open:</div><div id="priceRightAlign"> <span class="dollars"><%= bigdata[d].arr[i]['1. open'].slice(0,-2) %></span></div></li>
+                        <li><div id="priceLeftAlign">High:</div><div id="priceRightAlign"><span class="dollars" ><%= bigdata[d].arr[i]['2. high'].slice(0,-2) %></span></div></li>
+                        <li><div id="priceLeftAlign">Low:</div><div id="priceRightAlign"> <span class="dollars"><%= bigdata[d].arr[i]['3. low'].slice(0,-2) %></span></div></li>
+                        <li><div id="priceLeftAlign">Close:</div><div id="priceRightAlign"> <span class="dollars"><%= bigdata[d].arr[i]['4. close'].slice(0,-2) %></span></div></li>
+                        <li><div id="priceLeftAlign">Volume:</div><div id="priceRightAlign">  <%= bigdata[d].arr[i]['5. volume'] %></div></li>
                     </ul>
                 </div>
                 <% } %>

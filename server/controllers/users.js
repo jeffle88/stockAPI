@@ -32,6 +32,14 @@ module.exports = {
         }
         return array;
     }
+    function orderDates(arr){
+        var temp = [];
+        for(var l = 0; l < arr.length/2; l++){
+            temp = arr[l];
+            arr[l] = arr[arr.length - 1 - l];
+            arr[arr.length - 1 - l] = temp;
+        }
+    }
     var stocks = find(symb);
     var bigdata = [];
     for(var k = 0; k < stocks.length; k++){
@@ -41,6 +49,10 @@ module.exports = {
         .then(response => {
             var arr = [];                               //array for prices-data
             var arr2 = response.data['Meta Data'];      //information about the stock
+            if(arr2 === undefined){
+                arr2 = {};
+                arr2 = {'2. Symbol': "Error on input - incorrect"};
+            }
             var arr3 = [];                              //array for dates
             var count2 = 1;
             var ts = response.data['Time Series (Daily)'];
@@ -54,8 +66,11 @@ module.exports = {
                 }
                 count2++;
             }
+            orderDates(arr);
+            orderDates(arr3);
             bigdata.push({arr, arr2, arr3});     //Adding API res
-       })
+            console.log(bigdata);
+        })
         .catch(error => {
             console.log(error);
         });   
